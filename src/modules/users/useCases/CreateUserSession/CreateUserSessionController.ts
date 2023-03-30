@@ -10,6 +10,7 @@ export class CreateUserSessionController {
 		const hashProvider = new BcryptHashProvider();
 		const usersRepository = new UsersRepository();
 		const createUserSessionUseCase = new CreateUserSessionUseCase(usersRepository, hashProvider);
+		
 		return response.json(classToPlain(await createUserSessionUseCase.execute({
 			email,
 			password

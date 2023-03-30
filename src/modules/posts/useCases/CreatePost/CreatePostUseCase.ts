@@ -1,7 +1,7 @@
-import { IPost } from "../../entities/IPost";
-import { ICreatePostDTO } from "../../dtos/ICreatePostDTO";
-import { IPostsRepository } from "../../repositories/IPostsRepository";
-import { AppError } from "../../../../shared/errors/AppError";
+import { IPost } from '../../entities/IPost';
+import { ICreatePostDTO } from '../../dtos/ICreatePostDTO';
+import { IPostsRepository } from '../../repositories/IPostsRepository';
+import { AppError } from '../../../../shared/errors/AppError';
 
 export class CreatePostUseCase {
 	constructor(private postsRepository: IPostsRepository) {}
@@ -13,7 +13,7 @@ export class CreatePostUseCase {
 			userId,
 		});
 
-		if (!created_post) throw new AppError("Erro ao criar a postagem");
+		if (!created_post) throw new AppError('Erro ao criar a postagem');
 
 		return created_post;
 	}
