@@ -15,7 +15,6 @@ export class CreateUserSessionUseCase {
 
 	async execute({ email, password }: ICreateUserSessionUseCaseDTO): Promise<{ token: string; user: IUser }> {
 		const user = await this.usersRepository.findByEmail(email);
-
 		if (!user) {
 			throw new AppError('Wrong credentials', 403);
 		}
