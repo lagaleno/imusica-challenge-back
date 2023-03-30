@@ -1,0 +1,14 @@
+	{
+		"name": "default",
+		"type": "sqlite",
+		"database": "my-blog-challenge",
+		"entities": [
+			"./src/modules/**/infra/typeorm/entities/*.ts"
+		],
+		"migrations": [
+			"./src/shared/infra/typeorm/migrations/default/*.ts"
+		],
+		"cli": {
+			"migrationsDir": "./src/shared/infra/typeorm/migrations/default"
+		}
+	}
